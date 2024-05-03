@@ -10,13 +10,22 @@ import "primevue/resources/themes/mdc-light-indigo/theme.css";
 import ToastService from "primevue/toastservice";
 import ConfirmationService from "primevue/confirmationservice";
 import DialogService from "primevue/dialogservice";
-
+import InputText from 'primevue/inputtext';
+import IconField from 'primevue/iconfield';
+import InputIcon from 'primevue/inputicon';
+import Button from 'primevue/button';
+import Image from 'primevue/image';
 // Router
 import router from "./router";
 
 createApp(App)
 	.use(router)
 	.use(PrimeVue, { ripple: true })
+	.component('pv-input', InputText)
+	.component('pv-field', IconField)
+	.component('pv-icon', InputIcon)
+	.component('pv-button', Button)
+	.component('pv-image', Image)
 	.use(DialogService)
 	.use(ConfirmationService)
 	.use(ToastService)
