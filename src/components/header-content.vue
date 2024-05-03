@@ -4,10 +4,10 @@
 			<img src="./logo.png" alt="Logo" />
 		</div>
 		<div class="buttons">
-			<button @click="navigateToStore">Tienda</button>
-			<button @click="navigateToCourses">Cursos</button>
-			<button @click="navigateToCarrito">Carrito</button>
-			<button @click="navigateToProfile">Mi perfil</button>
+			<button @click="navigateToStore()">Tienda</button>
+			<button @click="navigateToCourses()">Cursos</button>
+			<button @click="navigateToCart()">Carrito</button>
+			<button @click="navigateToProfile()">Mi perfil</button>
 		</div>
 	</header>
 	<div class="separator"></div>
@@ -28,7 +28,7 @@ export default {
 			router.push("/courses");
 		};
 
-		const navigateToCarrito = () => {
+		const navigateToCart = () => {
 			router.push("/cart");
 		};
 
@@ -39,6 +39,8 @@ export default {
 		return {
 			navigateToStore,
 			navigateToCourses,
+			navigateToCart,
+			navigateToProfile,
 		};
 	},
 };
