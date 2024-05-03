@@ -8,7 +8,7 @@ export default {
         <div>
             <div class="filas">
                 <div class="boxCompra">
-                    <img class="imgCompra" src="../../../public/estante.png">
+                    <img class="imgCompra" src="/public/estante.png">
                     <div class="PrecioPunj">
                         <p class="precio">S/80.00</p>
                         <p class=" puntaje">4.6/5</p>
@@ -16,7 +16,7 @@ export default {
                     <button class="buttonGren">Comprar ahora</button>
                 </div>
                 <div class="boxCompra">
-                    <img class="imgCompra" src="../../../public/tubos.png">
+                    <img class="imgCompra" src="/public/tubos.png">
                     <div class="PrecioPunj">
                         <p class="precio">S/80.00</p>
                         <p class=" puntaje">4.6/5</p>
@@ -26,7 +26,7 @@ export default {
             </div>
             <div class="filas">
                 <div class="boxCompra">
-                    <img class="imgCompra" src="../../../public/motor.png">
+                    <img class="imgCompra" src="/public/motor.png">
                     <div class="PrecioPunj">
                         <p class="precio">S/80.00</p>
                         <p class=" puntaje">4.6/5</p>
@@ -34,7 +34,7 @@ export default {
                     <button class="buttonGren">Comprar ahora</button>
                 </div>
                 <div class="boxCompra">
-                    <img class="imgCompra" src="../../../public/ventilador.png">
+                    <img class="imgCompra" src="/public/ventilador.png">
                     <div class="PrecioPunj">
                         <p class="precio">S/80.00</p>
                         <p class=" puntaje">4.6/5</p>
@@ -46,7 +46,7 @@ export default {
         <button class="buttonWello">Ver más</button>
     </div>
     <div>
-        <img class="imgReferenvial" src="../../../public/abula.png">
+        <img class="imgReferenvial" src="/public/abula.png">
         <div class="boxTex">
             <h1>Oferta Ralampago</h1>
             <h3>"¡Desbloquea tu mejora definitiva! Obtén un 40% de descuento en la Membresía premium de AgriSage. Oferta exclusiva, por tiempo limitado."</h3>
@@ -154,6 +154,7 @@ export default {
     background: green;
     color: white;
     border-width: 0px;
+    }
 h1 {
   color: #000; /* Color negro */
 }
