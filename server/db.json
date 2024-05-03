@@ -5,6 +5,13 @@
       "name": "salah bedeiwi 33356",
       "password": "salah",
       "id": 1
+    },
+    {
+      "name": "Diego Rafael Cisneros Tafur",
+      "email": "diegorafaelcisnerostafur@gmail.com",
+      "phone": "999999999",
+      "password": "12345",
+      "id": 2
     }
   ],
   "cart": [

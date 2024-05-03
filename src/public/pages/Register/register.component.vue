@@ -13,12 +13,6 @@ export default {
       validateSucc: [],
     };
   },
-  mounted() {
-    let user = localStorage.getItem("user-info");
-    if (user) {
-      this.$router.push("/home");
-    }
-  },
   methods: {
     login() {
       this.$router.push({ name: "Login" });
