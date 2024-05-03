@@ -8,5 +8,7 @@ export default {
 </template>
 
 <style>
-
+h1 {
+  color: #000; /* Color negro */
+}
 </style>
