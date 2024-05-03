@@ -154,5 +154,7 @@ export default {
     background: green;
     color: white;
     border-width: 0px;
+h1 {
+  color: #000; /* Color negro */
 }
 </style>
