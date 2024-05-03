@@ -6,6 +6,7 @@ import Courses from "../courses/pages/courses.component.vue";
 import cartPageComponent from "../cart/pages/cart-page.component.vue";
 import RegisterComponent from "../public/pages/Register/register.component.vue";
 import LoginComponent from "../public/pages/Login/login.component.vue";
+import cardPaymentComponent from "../payment/pages/card-payment.component.vue";
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -17,6 +18,7 @@ const router = createRouter({
 		{ path: "/store", component: Store, meta: { title: "Tienda" } },
 		{ path: "/courses", component: Courses, meta: { title: "Cursos" } },
 		{ path: "/cart", component: cartPageComponent, meta: { title: "Carrito" } },
+		{ path: "/checkout", component: cardPaymentComponent, meta: { title: "Pago" } },
 		{ path: "/:pathMatch(.*)*", component: notFoundComponent },
 	],
 });
