@@ -1,22 +1,28 @@
 <script>
-import axios from "axios";
+import { AuthApiService } from "../../services/auth.services";
+import { useRoute } from "vue-router";
 export default {
   name: "LoginPage",
   data() {
     return {
       email: "",
       password: "",
+      auth : new AuthApiService(),
+      router: useRoute()
     };
   },
   methods: {
     async login() {
-      let result = await axios.get(
+/*       let result = await axios.get(
           `http://localhost:3000/users?email=${this.email}&password=${this.password}`
-      );
+      ); */
+
+      let result = await this.auth.login(this.email, this.password);
       console.log("user clicked in login", this.email, this.password);
       console.log(result);
       if (result.status === 200 && result.data.length > 0) {
         localStorage.setItem("user-info", JSON.stringify(result.data[0]));
+        console.log("user logged in");
         this.$router.push("/home");
       }
     },
