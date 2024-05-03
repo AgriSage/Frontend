@@ -4,7 +4,7 @@ export default {
 }
 </script>
 <template>
-  <h1>Store</h1>
+  <h1>Courses page of AgriSage</h1>
 </template>
 
 <style>
