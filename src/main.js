@@ -15,6 +15,9 @@ import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
 import Button from 'primevue/button';
 import Image from 'primevue/image';
+import Calendar from 'primevue/calendar';
+import InputNumber from 'primevue/inputnumber';
+
 // Router
 import router from "./router";
 
@@ -26,6 +29,8 @@ createApp(App)
 	.component('pv-icon', InputIcon)
 	.component('pv-button', Button)
 	.component('pv-image', Image)
+	.component('pv-calendar', Calendar)
+	.component('pv-input-number', InputNumber)
 	.use(DialogService)
 	.use(ConfirmationService)
 	.use(ToastService)
