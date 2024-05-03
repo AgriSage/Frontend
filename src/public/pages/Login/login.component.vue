@@ -23,14 +23,14 @@ export default {
       if (result.status === 200 && result.data.length > 0) {
         localStorage.setItem("user-info", JSON.stringify(result.data[0]));
         console.log("user logged in");
-        this.$router.push("/home");
+        this.router.redirectedTo("/");
       }
     },
   },
   mounted() {
     let user = localStorage.getItem("user-info");
     if (user) {
-      this.$router.push("/home");
+      this.router.redirectedTo("/");
     }
   },
 };
