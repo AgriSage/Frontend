@@ -13,7 +13,7 @@ export class AuthApiService {
     }
 
     register(user) {
-        return http.post(this.baseUrl, user);
+        return http.post(`${this.baseUrl}`, user);
     }
 
 }

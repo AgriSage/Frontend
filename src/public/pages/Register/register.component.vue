@@ -1,5 +1,6 @@
 <script>
-import axios from "axios";
+import { AuthApiService } from '../../services/auth.services';
+import { useRoute } from 'vue-router';
 export default {
   name: "RegisterPage",
 
@@ -11,23 +12,36 @@ export default {
       password: "",
       showError: ["", "", "", ""], //name, email, phone, password
       validateSucc: [],
+      auth: new AuthApiService(),
+      router: useRoute()
     };
   },
   methods: {
     login() {
-      this.$router.push({ name: "Login" });
+      this.$router.push("/login");
     },
     async signUp() {
-      let result = await axios.post("http://localhost:3000/users", {
+      /* let result = await axios.post("http://localhost:3000/users", {
         name: this.name,
         email: this.email,
         phone: this.phone,
         password: this.password,
-      });
-      if (result.status === 200) {
+      }); */
+      let result = await this.auth.register(
+      {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        password: this.password,
+      }
+      );
+
+      console.log(result);
+
+      if (result.statusText === 'Created' || result.status === 201) {
         console.log("Signed Up Successfully");
         localStorage.setItem("user-info", JSON.stringify(result.data));
-        this.$router.push("/home");
+        this.$router.push("/");
       } else {
         console.warn("Signed Up Failed");
       }
