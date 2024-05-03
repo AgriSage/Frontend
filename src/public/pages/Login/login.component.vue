@@ -1,8 +1,35 @@
 <script>
+import axios from "axios";
 export default {
   name: "LoginPage",
-}
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    async login() {
+      let result = await axios.get(
+          `http://localhost:3000/users?email=${this.email}&password=${this.password}`
+      );
+      console.log("user clicked in login", this.email, this.password);
+      console.log(result);
+      if (result.status === 200 && result.data.length > 0) {
+        localStorage.setItem("user-info", JSON.stringify(result.data[0]));
+        this.$router.push({ name: "Home" });
+      }
+    },
+  },
+  mounted() {
+    let user = localStorage.getItem("user-info");
+    if (user) {
+      this.$router.push({ name: "Home" });
+    }
+  },
+};
 </script>
+
 <template>
   <div style="display: grid; grid-template-columns: 1fr 1fr;">
     <div class="container">
@@ -11,13 +38,13 @@ export default {
         <label for="email">Email:</label>
         <pv-field iconPosition="left">
           <pv-icon class="pi pi-at"> </pv-icon>
-          <pv-input id="email" v-model="value" placeholder="Ingresa tu email" required />
+          <pv-input id="email" v-model="email" placeholder="Ingresa tu email" required />
         </pv-field>
 
         <label for="password">Contraseña:</label>
         <pv-field iconPosition="left">
           <pv-icon class="pi pi-lock"> </pv-icon>
-          <pv-input id="password" v-model="value" placeholder="Ingresa tu contraseña" required />
+          <pv-input id="password" v-model="password" placeholder="Ingresa tu contraseña" required />
         </pv-field>
 
         <pv-button class="btn-login" type="submit" label="Ingresar"/>
@@ -50,9 +77,9 @@ export default {
   flex-direction: column;
   text-align: start;
   margin-top: 75px;
-  label {
-    color: #B08450;
-  }
+}
+label {
+  color: #B08450;
 }
 input {
   border-radius: 20px;
@@ -73,20 +100,17 @@ button  {
 .register-lbl {
   font-size: 14px;
   color: #344054;
-  a {
-    color: #198754;
-    font-weight: 500;
-    cursor: pointer;
-  }
 }
-span {
-  align-content: center;
+.register-lbl a {
+  color: #198754;
+  font-weight: 500;
+  cursor: pointer;
 }
 .btn-login {
-    background-color: #267144;
-    color: white;
-    border-radius: 20px;
-    border: none;
-    font-weight: 500;
+  background-color: #267144;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  font-weight: 500;
 }
 </style>

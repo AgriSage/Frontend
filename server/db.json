@@ -1,6 +1,11 @@
 {
   "users": [
-    {}
+    {
+      "email": "bedei111@umn.edu",
+      "name": "salah bedeiwi 33356",
+      "password": "salah",
+      "id": 1
+    }
   ],
   "cart": [
     {
