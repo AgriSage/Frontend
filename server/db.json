@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "email": "bedei111@umn.edu",
+      "name": "salah bedeiwi 33356",
+      "password": "salah",
+      "id": 1
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "userId": 1,
+      "products": [
+        {
+          "id": 1,
+          "name": "Pack inicial",
+          "description": "Herramientas inciales para comenzar en hidroponia",
+          "price": 30,
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "name": "Delivery",
+          "description": "Delivery de productos",
+          "price": 8,
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}
