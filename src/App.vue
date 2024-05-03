@@ -19,16 +19,6 @@ export default {
     const router = useRouter();
 
     onMounted(() => {
-        const userInfo = localStorage.getItem("user-info");
-        if (userInfo) {
-          user.value = JSON.parse(userInfo);
-          loggedIn.value = true;
-        } else {
-          loggedIn.value = false;
-        }
-    });
-
-    onUpdated(() => {
       setTimeout(() => {
         const userInfo = localStorage.getItem("user-info");
         if (userInfo) {
@@ -41,7 +31,21 @@ export default {
             router.push('/login');
           }
         }
-      }, 1000);
+      }, 300);
+    });
+
+    onUpdated(() => {
+      const userInfo = localStorage.getItem("user-info");
+        if (userInfo) {
+          user.value = JSON.parse(userInfo);
+          loggedIn.value = true;
+        } else {
+          loggedIn.value = false;
+          // redirect to login page
+          if (router.currentRoute.value.path !== '/login') {
+            router.push('/login');
+          }
+        }
     });
 
     return { user, loggedIn };
