@@ -16,7 +16,7 @@ export default {
   mounted() {
     let user = localStorage.getItem("user-info");
     if (user) {
-      this.$router.push({ name: "Home" });
+      this.$router.push("/home");
     }
   },
   methods: {
@@ -33,7 +33,7 @@ export default {
       if (result.status === 200) {
         console.log("Signed Up Successfully");
         localStorage.setItem("user-info", JSON.stringify(result.data));
-        this.$router.push({name: "register"});
+        this.$router.push("/home");
       } else {
         console.warn("Signed Up Failed");
       }
