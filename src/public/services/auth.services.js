@@ -9,7 +9,7 @@ export class AuthApiService {
 
 
     login(email, password) {
-        return http.get(`${this.baseUrl}?{email=${email}&password=${password}`);
+        return http.get(`${this.baseUrl}?email=${email}&password=${password}`);
     }
 
     register(user) {
