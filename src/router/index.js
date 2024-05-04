@@ -39,12 +39,13 @@ router.beforeEach((to, from, next) => {
 	let baseTitle = "AgriSage";
 	document.title = `${baseTitle} | ${to.meta.title || 'Not Found'}`;
 	const userInfo = localStorage.getItem('user-info');
-	if (to.meta.requiresAuth && !userInfo) {
+/* 	if (to.meta.requiresAuth && !userInfo) {
 		next('/login');
 	}
 	else {
 		next();
-	}
+	} */
+	next();
 });
 
 export default router;
