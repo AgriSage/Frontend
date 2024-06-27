@@ -1,0 +1,59 @@
+<script>
+import {useRouter} from "vue-router";
+import {useAuthenticationStore} from "../services/authentication.store.js";
+
+export default {
+  name: "authentication-section",
+  data() {
+    return {
+      router: useRouter(),
+      authenticationStore: useAuthenticationStore(),
+    }
+  },
+  computed: {
+    isSignedIn() {
+      return this.authenticationStore.isSignedIn;
+    },
+    currentUsername() {
+      return this.authenticationStore.currentUsername;
+    }
+  },
+  methods: {
+    onSignIn() {
+      this.router.replace({name: "sign-in"});
+    },
+    onSignUp() {
+      this.router.replace({name: "sign-up"});
+    },
+    onSignOut() {
+      this.authenticationStore.signOut(this.router);
+    }
+  }
+}
+</script>
+
+<template>
+  <div class="welcome-user">
+    <!-- Authentication Information and Available Actions depends on sign in status -->
+
+    <!-- Authenticated Scenario Information and Available Actions -->
+    <div v-if="isSignedIn">
+      <span> Welcome, {{ currentUsername }}</span> <pv-button @click="onSignOut">Sign Out</pv-button>
+    </div>
+    <!-- Anonymous Scenario Available Actions -->
+    <div v-else>
+      <pv-button @click="onSignIn">Sign In</pv-button> <pv-button @click="onSignUp">Sign Up</pv-button>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.welcome-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+span {
+  color: black;
+}
+</style>

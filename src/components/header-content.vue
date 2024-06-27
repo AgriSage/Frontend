@@ -9,14 +9,20 @@
 			<button @click="navigateToCart()">Carrito</button>
 			<button @click="navigateToProfile()">Mi perfil</button>
 		</div>
+    <authentication-section />
 	</header>
 	<div class="separator"></div>
 </template>
 
 <script>
 import { useRouter } from "vue-router";
+import authenticationSection from "../iam/components/authentication-section.component.vue";
 
 export default {
+  name: "header-content",
+  components: {
+    authenticationSection,
+  },
 	setup() {
 		const router = useRouter();
 
