@@ -46,22 +46,12 @@ import {createPinia} from "pinia";
 const pinia = createPinia();
 
 // Vue Cookies
-import VueCookies from 'vue-cookies'
 
 
 // Create App
 createApp(App)
 	.use(router)
 	.use(pinia)
-	.use(
-		VueCookies, {
-			expires: '7d',
-			path: '/',
-			domain: '',
-			secure: '',
-			sameSite: 'Lax'
-		}
-	)
 	.use(PrimeVue, { ripple: true})
 	.use(ConfirmationService)
 	.use(DialogService)
